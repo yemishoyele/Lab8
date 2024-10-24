@@ -45,10 +45,18 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 
+    /**
+     * this returns the size of the cities list
+     * @return int
+     */
     public int getCount(){
         return cities.size();
     }
 
+    /**
+     * this adds a city object to the list
+     * @param city
+     */
     public void addCity(City city){
 
     }

@@ -35,4 +35,14 @@ public class CustomListTest {
         assertEquals(list.getCount(),listSize + 1);
     }
 
+    /**
+     * get the size of the list
+     * check if the size is 0
+     */
+    @Test
+    public void getCountTest(){
+        list = MockCityList();
+        assertEquals(list.getCount(),0);
+    }
+
 }

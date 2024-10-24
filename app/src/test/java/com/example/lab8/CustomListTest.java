@@ -1,6 +1,7 @@
 package com.example.lab8;
 
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -43,17 +44,41 @@ public class CustomListTest {
     public void getCountTest(){
         list = MockCityList();
         assertEquals(list.getCount(),0);
+
+        City city = new City("Estevan", "SK");
+        list.addCity(city);
+        assertEquals(list.getCount(),1);
     }
 
+    /**
+     * get the size of the list
+     * add a city to the list, then delete it
+     * check if the size of the list is equal to the initial size of the list - 1
+     */
     @Test
     public void deleteCityTest(){
         list = MockCityList();
         City city1 = new City("Edmonton", "AB");
         list.addCity(city1);
-        City city2 = new City("Vancouver", "BC");
         int listSize = list.getCount();
         list.deleteCity(city1);
         assertEquals(list.getCount(),listSize - 1);
+    }
+
+    /**
+     * attempt to delete a city that does not exist in the list
+     * ensure that an IllegalArgumentException is thrown
+     */
+    @Test
+    public void deleteCityException(){
+        list = MockCityList();
+
+        City city1 = new City("Edmonton", "AB");
+        
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.deleteCity(city1);
+        });
+
     }
 
 }

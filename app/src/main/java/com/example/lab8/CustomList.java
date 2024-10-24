@@ -72,4 +72,13 @@ public class CustomList extends ArrayAdapter<City> {
         cities.remove(city);
     }
 
+    /**
+     * this checks if a city is in the cities list
+     * @param city
+     * @return Boolean
+     */
+    public Boolean hasCity(City city){
+        return Boolean.FALSE;
+    }
+
 }

@@ -54,11 +54,18 @@ public class CustomList extends ArrayAdapter<City> {
     }
 
     /**
-     * this adds a city object to the list
+     * this adds a city object to the cities list
      * @param city
      */
     public void addCity(City city){
         cities.add(city);
+    }
+
+    /**
+     * this removes a city from the cities list
+     * @param city
+     */
+    public void deleteCity(City city){
     }
 
 }
